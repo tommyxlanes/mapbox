@@ -7,32 +7,32 @@ var stores = {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [-118.24286, 34.04677],
+        coordinates: [-117.9258163, 34.078686],
       },
       properties: {
-        name: 'Digital Camera Warehouse',
-        phoneFormatted: '1300 365 220',
-        address: '174 Canterbury Rd',
-        city: 'Sydney',
-        country: 'Australia',
-        postalCode: '2193',
-        state: 'New South Wales',
+        name: 'Asolute Smoke Shop',
+        phoneFormatted: '626-482-5536',
+        address: '439 N Vincent Ave',
+        city: 'Covina',
+        country: 'California',
+        postalCode: '91722',
+        state: 'California',
       },
     },
     {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [-118.09126, 34.08008],
+        coordinates: [-117.9076218, 34.0764015],
       },
       properties: {
-        name: "Borge's Imaging",
-        phoneFormatted: '(03) 9646 2399',
-        address: '449 Graham Street',
-        city: 'Port Melbourne',
-        country: 'Australia',
-        postalCode: '3207',
-        state: 'Victoria',
+        name: 'RA House of CBD & Vape',
+        phoneFormatted: '626-332-4022',
+        address: '351 N Azusa Ave',
+        city: 'West Covina',
+        country: 'USA',
+        postalCode: '91791',
+        state: 'California',
         website: {
           title: 'View on Google Maps',
           url: 'https://www.google.com/maps/place/449+Graham+St,+Port+Melbourne+VIC+3207/@-37.833956,144.930637,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad6679142fceb3b:0xf733bb4b5dcf0ae1!8m2!3d-37.833956!4d144.932831',
@@ -43,48 +43,32 @@ var stores = {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [-118.239588, 34.0451456],
+        coordinates: [-117.890218, 34.0803236],
       },
       properties: {
-        name: 'Parramatta Cameras',
-        phoneFormatted: '(02) 9689 3363',
-        address: 'Westfield Parramatta, Shop 2101/2103 Argyle St',
-        city: 'Parramatta',
-        country: 'Australia',
-        postalCode: '2150',
-        state: 'New South Wales',
+        name: 'Cigar 451',
+        phoneFormatted: '626-332-1590',
+        address: '451 S Citrus Ave',
+        city: 'Covina',
+        country: 'USA',
+        postalCode: '91723',
+        state: 'California',
       },
     },
     {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [-118.12392, 34.06261],
+        coordinates: [-117.890218, 34.0803236],
       },
       properties: {
-        name: 'Midland Camera House',
-        phoneFormatted: '(08) 9250 1635',
-        address: '210 Great Eastern Highway',
-        city: 'Midland',
-        country: 'Australia',
-        postalCode: '6056',
-        state: 'Western Australia',
-      },
-    },
-    {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [-118.05839, 34.10701],
-      },
-      properties: {
-        name: 'Macarthur Camera House',
-        phoneFormatted: '(02) 4620 5588',
-        address: 'Shop L78, 200 Gilchrist Dr',
-        city: 'Campbelltown',
-        country: 'Australia',
-        postalCode: '2560',
-        state: 'New South Wales',
+        name: 'Reaper’s Den Smoke Shop',
+        phoneFormatted: '626-966-3999',
+        address: '120 N Vincent Ave',
+        city: 'West Covina',
+        country: 'USA',
+        postalCode: '91790',
+        state: 'California',
       },
     },
   ],
@@ -390,10 +374,12 @@ function createPopUp(currentFeature) {
   var popUps = document.getElementsByClassName('mapboxgl-popup');
   if (popUps[0]) popUps[0].remove();
 
+  console.log(currentFeature);
+
   var popup = new mapboxgl.Popup({ closeOnClick: false })
     .setLngLat(currentFeature.geometry.coordinates)
     .setHTML(
-      '<h3>Sweetgreen</h3>' +
+      `<h3>${currentFeature.properties.name}</h3>` +
         '<h4>' +
         currentFeature.properties.address +
         '</h4>'
